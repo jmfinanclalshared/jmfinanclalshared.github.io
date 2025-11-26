@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JM FINANClAL SHARED SERVICE CENTER D.O.O.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #F5F2EB;
+            color: #1C1C1C;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-section {
+            background-color: #0F1F18;
+            border-bottom-left-radius: 50% 100px;
+            border-bottom-right-radius: 50% 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-bg-image {
+            background-image: linear-gradient(rgba(15, 31, 24, 0.7), rgba(15, 31, 24, 0.8)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .btn-primary {
+            background-color: #C5D86D;
+            color: #0F1F18;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #B5C85D;
+            transform: translateY(-2px);
+        }
+        .card-hoveringing {
+            transition: all 0.4s ease;
+        }
+        .card-hoveringing:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .modal-overlay {
+            background-color: rgba(15, 31, 24, 0.6);
+            backdrop-filter: blur(4px);
+        }
+        .fade-in {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @media (min-width: 1024px) {
+            .hero-section {
+                border-bottom-left-radius: 50% 150px;
+                border-bottom-right-radius: 50% 150px;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="absolute top-0 w-full z-50 px-6 py-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-white text-xl md:text-2xl font-serif font-bold tracking-wider">
+                JM FINANCIAL
+            </div>
+            <button onclick="openContactModal()" class="bg-white text-[#0F1F18] px-6 py-2 rounded-full font-medium text-sm hover:bg-gray-100 transition-colors flex items-center gap-2">
+                Kontaktirajte nas
+                <i class="ph ph-arrow-right"></i>
+            </button>
+        </div>
+    </nav>
+
+    <header class="hero-section hero-bg-image text-white min-h-[90vh] flex items-center justify-center pt-20 pb-32 px-6">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <span class="inline-block py-1 px-3 rounded-full border border-white/30 text-xs tracking-widest uppercase mb-6 bg-white/10 backdrop-blur-sm">
+                Finansijski Eksperti
+            </span>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl leading-tight mb-8">
+                Vaš strateški partner <br> <span class="text-[#C5D86D] italic">za finansijski rast</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-12 font-light leading-relaxed">
+                Pružamo sveobuhvatne usluge računovodstva, poreskog savetovanja i obračuna zarada. JM FINANClAL SHARED SERVICE CENTER D.O.O. osigurava stabilnost vašeg poslovanja kroz preciznost i stručnost.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <button onclick="scrollToSection('usluge')" class="btn-primary px-8 py-4 rounded-full font-semibold text-lg flex items-center justify-center gap-2">
+                    Naše Usluge
+                    <i class="ph-bold ph-arrow-down"></i>
+                </button>
+                <button onclick="openContactModal()" class="border border-white/30 hover:bg-white/10 px-8 py-4 rounded-full font-semibold text-lg transition-colors">
+                    Zakažite Konsultacije
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section id="o-nama" class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl md:text-5xl mb-8 text-[#0F1F18]">
+                    O Nama
+                </h2>
+                <div class="space-y-6 text-gray-600 text-lg leading-relaxed">
+                    <p>
+                        JM FINANClAL SHARED SERVICE CENTER D.O.O. je vodeća agencija specijalizovana za pružanje vrhunskih finansijskih usluga u srcu Beograda. Naša misija je da oslobodimo potencijal vašeg poslovanja preuzimanjem kompletnog tereta administrativnih i finansijskih obaveza.
+                    </p>
+                    <p>
+                        Sa dugogodišnjim iskustvom u radu sa domaćim i internacionalnim klijentima, razumemo specifičnosti lokalnog tržišta i zakonodavstva. Naš tim čine sertifikovani računovođe i poreski savetnici posvećeni apsolutnoj preciznosti i diskreciji.
+                    </p>
+                    <p>
+                        Ne nudimo samo puko knjiženje promena, već proaktivno analiziramo vaše finansije kako bismo predložili optimalna rešenja za uštedu i rast. Verujemo u transparentnost, tačnost i dugoročna partnerstva zasnovana na poverenju.
+                    </p>
+                    <p>
+                        Bilo da ste start-up, mala firma ili velika korporacija, naš pristup je uvek individualan i prilagođen vašim specifičnim potrebama i ciljevima.
+                    </p>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="absolute inset-0 bg-[#0F1F18] rounded-3xl transform translate-x-4 translate-y-4"></div>
+                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop" alt="Office environment" class="relative rounded-3xl shadow-xl w-full h-[600px] object-cover grayscale hover:grayscale-0 transition-all duration-500">
+            </div>
+        </div>
+    </section>
+
+    <section id="usluge" class="bg-white py-24 px-6 md:px-12 rounded-[50px] my-12 mx-4 md:mx-8 shadow-sm">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20">
+                <span class="text-[#0F1F18] uppercase tracking-widest text-sm font-semibold border-b border-[#0F1F18] pb-1">Ekspertiza</span>
+                <h2 class="text-4xl md:text-6xl mt-6 mb-6 text-[#0F1F18]">Naše Usluge</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-lg">
+                    Sveobuhvatna rešenja dizajnirana da optimizuju vaše poslovanje i osiguraju potpunu usklađenost sa zakonima Republike Srbije.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card-hoveringing bg-[#F5F2EB] p-10 rounded-3xl group">
+                    <div class="w-16 h-16 bg-[#0F1F18] rounded-2xl flex items-center justify-center text-[#C5D86D] text-3xl mb-8 group-hover:scale-110 transition-transform">
+                        <i class="ph ph-calculator"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-[#0F1F18]">Računovodstvo</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Kompletno vođenje poslovnih knjiga u skladu sa MRS/MSFI standardima i lokalnom regulativom. Nudimo precizno evidentiranje svih poslovnih promena, izradu završnih računa i redovno finansijsko izveštavanje koje vam daje jasnu sliku stanja vaše kompanije u svakom trenutku.
+                    </p>
+                    <a href="#" onclick="openContactModal()" class="inline-flex items-center text-[#0F1F18] font-semibold border-b border-transparent hover:border-[#0F1F18] transition-colors">Saznajte više <i class="ph ph-arrow-right ml-2"></i></a>
+                </div>
+
+                <div class="card-hoveringing bg-[#0F1F18] p-10 rounded-3xl group text-white">
+                    <div class="w-16 h-16 bg-[#C5D86D] rounded-2xl flex items-center justify-center text-[#0F1F18] text-3xl mb-8 group-hover:scale-110 transition-transform">
+                        <i class="ph ph-chart-pie-slice"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Poresko Savetovanje</h3>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Strateško planiranje poreskih obaveza radi optimizacije vašeg profita uz puno poštovanje zakona. Naš tim prati sve izmene u poreskom zakonodavstvu kako bi vas pravovremeno obavestio i pripremio sve vrste poreskih bilansa, PDV prijava i poreskih rešenja.
+                    </p>
+                    <a href="#" onclick="openContactModal()" class="inline-flex items-center text-white font-semibold border-b border-transparent hover:border-white transition-colors">Saznajte više <i class="ph ph-arrow-right ml-2"></i></a>
+                </div>
+
+                <div class="card-hoveringing bg-[#F5F2EB] p-10 rounded-3xl group">
+                    <div class="w-16 h-16 bg-[#0F1F18] rounded-2xl flex items-center justify-center text-[#C5D86D] text-3xl mb-8 group-hover:scale-110 transition-transform">
+                        <i class="ph ph-users"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-[#0F1F18]">Obračun Zarada</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Efikasan i poverljiv obračun plata, naknada i drugih primanja zaposlenih (Payroll). Vršimo kompletnu administraciju kadrova, prijavu i odjavu radnika, obračun poreza i doprinosa, kao i komunikaciju sa relevantnim državnim institucijama i fondovima.
+                    </p>
+                    <a href="#" onclick="openContactModal()" class="inline-flex items-center text-[#0F1F18] font-semibold border-b border-transparent hover:border-[#0F1F18] transition-colors">Saznajte više <i class="ph ph-arrow-right ml-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div>
+                <h2 class="text-4xl md:text-5xl mb-12 text-[#0F1F18]">
+                    Zašto odabrati <br> <span class="italic text-gray-500">naš tim?</span>
+                </h2>
+                <div class="space-y-10">
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[#C5D86D] flex items-center justify-center font-bold text-xl text-[#0F1F18]">1</div>
+                        <div>
+                            <h4 class="text-2xl font-bold text-[#0F1F18] mb-2">Apsolutna Preciznost</h4>
+                            <p class="text-gray-600 leading-relaxed">
+                                U svetu finansija nema mesta za greške. Naš sistem dvostruke kontrole garantuje da su vaši podaci uvek tačni, a izveštaji pouzdani.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[#C5D86D] flex items-center justify-center font-bold text-xl text-[#0F1F18]">2</div>
+                        <div>
+                            <h4 class="text-2xl font-bold text-[#0F1F18] mb-2">Moderni Alati</h4>
+                            <p class="text-gray-600 leading-relaxed">
+                                Koristimo najsavremenije softverske alate za cloud računovodstvo, omogućavajući vam pristup vašim podacima u realnom vremenu, bilo gde i bilo kada.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[#C5D86D] flex items-center justify-center font-bold text-xl text-[#0F1F18]">3</div>
+                        <div>
+                            <h4 class="text-2xl font-bold text-[#0F1F18] mb-2">Proaktivan Pristup</h4>
+                            <p class="text-gray-600 leading-relaxed">
+                                Ne čekamo da nastane problem da bismo reagovali. Redovno vas savetujemo o mogućnostima za unapređenje poslovanja i smanjenje troškova.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative h-full min-h-[500px] rounded-3xl overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" alt="Architecture Beograd" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-[#0F1F18]/20"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-[#0F1F18] text-white py-24 px-6 md:px-12 rounded-[50px] mx-4 md:mx-8">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl mb-16">Naš Proces Rada</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                <div class="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-gray-700 -z-1"></div>
+                
+                <div class="relative bg-[#1a2e25] p-8 rounded-3xl border border-gray-700/50">
+                    <div class="w-24 h-24 mx-auto bg-[#0F1F18] border-2 border-[#C5D86D] rounded-full flex items-center justify-center text-3xl mb-6 relative z-10">
+                        <i class="ph ph-magnifying-glass"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">1. Analiza i Postavka</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Detaljno analiziramo vaše trenutno poslovanje, identifikujemo specifične potrebe i postavljamo optimalnu strukturu kontnog okvira i procesa izveštavanja prilagođenu vama.
+                    </p>
+                </div>
+
+                <div class="relative bg-[#1a2e25] p-8 rounded-3xl border border-gray-700/50">
+                    <div class="w-24 h-24 mx-auto bg-[#0F1F18] border-2 border-[#C5D86D] rounded-full flex items-center justify-center text-3xl mb-6 relative z-10">
+                        <i class="ph ph-gear"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">2. Implementacija</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Preuzimamo dokumentaciju i integrišemo je u naš sistem. Uspostavljamo redovne tokove informacija i obezbeđujemo da su sve zakonske obaveze ispunjene na vreme.
+                    </p>
+                </div>
+
+                <div class="relative bg-[#1a2e25] p-8 rounded-3xl border border-gray-700/50">
+                    <div class="w-24 h-24 mx-auto bg-[#0F1F18] border-2 border-[#C5D86D] rounded-full flex items-center justify-center text-3xl mb-6 relative z-10">
+                        <i class="ph ph-trend-up"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">3. Izveštavanje i Rast</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Dostavljamo vam redovne finansijske izveštaje sa jasnim pokazateljima uspeha. Pružamo savete za dalje korake koji vode ka stabilnom i sigurnom rastu kompanije.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 md:px-12 text-center max-w-4xl mx-auto">
+        <h2 class="text-4xl md:text-6xl mb-8 text-[#0F1F18]">
+            Spremni za saradnju?
+        </h2>
+        <p class="text-xl text-gray-600 mb-12">
+            Vaše finansije su u sigurnim rukama. Kontaktirajte nas danas i fokusirajte se na ono što radite najbolje - vođenje vašeg biznisa.
+        </p>
+        <button onclick="openContactModal()" class="btn-primary px-12 py-5 rounded-full text-xl font-bold shadow-lg hover:shadow-xl transition-all">
+            Zatražite Ponudu
+        </button>
+    </section>
+
+    <footer class="bg-[#0F1F18] text-white pt-20 pb-10 px-6 md:px-12 rounded-t-[50px] mt-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            <div class="col-span-1 md:col-span-2">
+                <h3 class="text-2xl font-serif font-bold mb-6 tracking-wider">JM FINANCIAL</h3>
+                <p class="text-gray-400 max-w-sm">
+                    Pouzdan partner u svetu finansija, računovodstva i poreskog savetovanja. Posvećeni vašem uspehu u srcu Beograda.
+                </p>
+            </div>
+            
+            <div>
+                <h4 class="text-lg font-bold mb-6 text-[#C5D86D]">Adresa</h4>
+                <p class="text-gray-300 leading-relaxed">
+                    JM FINANClAL SHARED SERVICE CENTER D.O.O.<br>
+                    VOJVODE STEPE 310<br>
+                    PAK 166125<br>
+                    Beograd (Vozdovac), Srbija
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold mb-6 text-[#C5D86D]">Kontakt</h4>
+                <a href="mailto:main@jmfinanclalsharedservicecenter.pro" class="text-gray-300 hover:text-white transition-colors block mb-2 break-all">
+                    main@jmfinanclalsharedservicecenter.pro
+                </a>
+                <p class="text-sm text-gray-500 mt-4">
+                    Radno vreme: Pon - Pet, 09:00 - 17:00
+                </p>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+            <p>&copy; 2024 JM FINANClAL SHARED SERVICE CENTER D.O.O. Sva prava zadržana.</p>
+            <div class="flex gap-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white transition-colors">Politika Privatnosti</a>
+                <a href="#" class="hover:text-white transition-colors">Uslovi Korišćenja</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="contactModal" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 modal-overlay" onclick="closeContactModal()"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-lg p-6">
+            <div class="bg-white rounded-3xl p-8 shadow-2xl relative fade-in">
+                <button onclick="closeContactModal()" class="absolute top-6 right-6 text-gray-400 hover:text-gray-900 transition-colors">
+                    <i class="ph ph-x text-2xl"></i>
+                </button>
+                
+                <h3 class="text-3xl font-serif font-bold mb-2 text-[#0F1F18]">Kontaktirajte Nas</h3>
+                <p class="text-gray-500 mb-6 text-sm">Popunite formu ispod i odgovorićemo vam putem emaila u najkraćem roku.</p>
+                
+                <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Vaše Ime i Prezime</label>
+                        <input type="text" required class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0F1F18] focus:border-transparent transition-all" placeholder="Petar Petrović">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email Adresa</label>
+                        <input type="email" required class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0F1F18] focus:border-transparent transition-all" placeholder="petar@firma.rs">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Tema</label>
+                        <select class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0F1F18] focus:border-transparent transition-all">
+                            <option>Računovodstvo</option>
+                            <option>Poresko Savetovanje</option>
+                            <option>Obračun Zarada</option>
+                            <option>Ostalo</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Poruka</label>
+                        <textarea required rows="4" class="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#0F1F18] focus:border-transparent transition-all" placeholder="Kako vam možemo pomoći?"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full btn-primary py-4 rounded-xl font-bold text-lg mt-2">
+                        Pošalji Poruku
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="successModal" class="fixed inset-0 z-[110] hidden">
+        <div class="absolute inset-0 modal-overlay flex items-center justify-center p-6">
+            <div class="bg-white rounded-3xl p-8 shadow-2xl max-w-sm w-full text-center fade-in relative">
+                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600 text-4xl">
+                    <i class="ph-fill ph-check-circle"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-[#0F1F18] mb-2">Uspešno poslato!</h3>
+                <p class="text-gray-600 mb-8">
+                    Hvala vam na interesovanju. Primili smo vašu poruku i naš tim će vas kontaktirati putem emaila uskoro.
+                </p>
+                <button onclick="closeSuccessModal()" class="w-full bg-[#0F1F18] text-white py-3 rounded-xl font-medium hover:bg-gray-800 transition-colors">
+                    Povratak na sajt
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openContactModal() {
+            document.getElementById('contactModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeContactModal() {
+            document.getElementById('contactModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            closeContactModal();
+            document.getElementById('successModal').classList.remove('hidden');
+            document.getElementById('contactForm').reset();
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('successModal').classList.add('hidden');
+        }
+
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                closeContactModal();
+                closeSuccessModal();
+            }
+        });
+    </script>
+</body>
+</html>
